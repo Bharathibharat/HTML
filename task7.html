@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Task Deletion Confirmation & Feedback</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+      text-align: center;
+      padding-top: 100px;
+    }
+    button {
+      background: #ff4d6d;
+      color: white;
+      border: none;
+      padding: 15px 30px;
+      font-size: 18px;
+      border-radius: 12px;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+    button:hover {
+      background: #e63946;
+    }
+  </style>
+</head>
+<body bgcolor ="pink">
+
+  <h1>🗂️ Task Manager</h1>
+  <button onclick="submitTask()"> Submit Task</button>
+
+  <script>
+    function submitTask() {
+      // Step 1: ALERT
+      alert("📢 Heads up!\nYou are about to save a task.");
+
+      // Step 2: CONFIRM
+      let sure = confirm("❓ Are you really sure you want to save this task?");
+
+      if (sure) {
+        // Step 3: PROMPT
+        let reason = prompt("✍️ Why are you save this task?\nExample: Done, complete");
+
+        if (reason && reason.trim() !== "") {
+          alert("✅ Task saved!\nReason saved: " + reason);
+        } else {
+          alert("🚫 submition stopped. No reason given.");
+        }
+      } else {
+        alert("👍 Phew! Task is safe.");
+      }
+    }
+  </script>
+
+</body>
+</html>
